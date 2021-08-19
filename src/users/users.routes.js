@@ -1,5 +1,5 @@
 const { Router } = require('express');
-// const { auth } = require('../middleware');
+const { auth } = require('../middleware');
 const {createUser, findUser, deleteUser, updateUser, authUser}= require('./users.controllers');
 const userRouter = Router();
 userRouter.post('/users', createUser);
@@ -7,5 +7,5 @@ userRouter.post('/users/:username', findUser);
 userRouter.delete('/users/:username', deleteUser);
 userRouter.put('/users', updateUser);
 userRouter.put('/users/:username', updateUser);
-// userRouter.get('/users', auth, authUser);
+userRouter.get('/users', auth, authUser);
 module.exports = userRouter;
