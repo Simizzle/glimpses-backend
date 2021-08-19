@@ -24,7 +24,7 @@ exports.createPost = async (req, res) => {
 };
 
 exports.getPosts = async (req, res) => {
-  console.log("here");
+//   console.log("here");
   try {
     const postMessages = await PostMessage.find();
 
